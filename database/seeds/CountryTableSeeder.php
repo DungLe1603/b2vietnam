@@ -13,13 +13,13 @@ class CountryTableSeeder extends Seeder
     {
         $data =[
             [
-                'name' => 'Viet Nam'
+                'name' => 'VietNam'
             ],
             [
                 'name' => 'Japan'
             ],
             [
-                'name' => 'English'
+                'name' => 'England'
             ]
         ];
 
