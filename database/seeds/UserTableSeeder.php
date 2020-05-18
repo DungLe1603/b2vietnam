@@ -11,49 +11,15 @@ class UserTableSeeder extends Seeder
      */
     public function run()
     {
-        $data = [
-            [
-                'email' => 'admin@gmail.com',
-                'password' => bcrypt('123456')
-            ],
-            [
-                'email' => 'thientrankhh@gmail.com',
-                'password' => bcrypt('123456')
-            ],
-            [
-                'email' => 'info@stdsoftware.com',
-                'password' => bcrypt('123456')
-            ],
-            [
-                'email' => 'b@gmail.com',
-                'password' => bcrypt('123456')
-            ],
-            [
-                'email' => 'c@gmail.com',
-                'password' => bcrypt('123456')
-            ],
-            [
-                'email' => 'd@gmail.com',
-                'password' => bcrypt('123456')
-            ],
-            [
-                'email' => 'e@gmail.com',
-                'password' => bcrypt('123456')
-            ],
-            [
-                'email' => 'f@gmail.com',
-                'password' => bcrypt('123456')
-            ],
-            [
-                'email' => 'g@gmail.com',
-                'password' => bcrypt('123456')
-            ],
-            [
-                'email' => 'n@gmail.com',
-                'password' => bcrypt('123456')
-            ],
-        ];
-
-        DB::table('users')->insert($data);
+        
+        $dataTest =[];
+        for ($i=1; $i < 31; $i++) { 
+            $user['email'] = 'email'. $i .'@gmail.com'; 
+            $user['password'] = bcrypt('123123123'); 
+            array_push($dataTest, $user);
+        }
+        DB::statement('SET FOREIGN_KEY_CHECKS=0;');
+        DB::table('users')->truncate();
+        DB::table('users')->insert($dataTest);
     }
 }

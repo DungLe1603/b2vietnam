@@ -17,10 +17,10 @@ services:
     volumes:
       - ./dbdata:/var/lib/mysql
     environment:
-      MYSQL_ROOT_PASSWORD: internship
-      MYSQL_DATABASE: internship
-      MYSQL_USER: internship
-      MYSQL_PASSWORD: internship
+      MYSQL_ROOT_PASSWORD: b2vietnam
+      MYSQL_DATABASE: b2vietnam
+      MYSQL_USER: b2vietnam
+      MYSQL_PASSWORD: b2vietnam
     ports:
       - 3306:3306
 
@@ -32,5 +32,5 @@ services:
       - db
     environment:
       PMA_HOSTS: db
-      PMA_USER: internship
-      PMA_PASSWORD: internship
+      PMA_USER: b2vietnam
+      PMA_PASSWORD: b2vietnam

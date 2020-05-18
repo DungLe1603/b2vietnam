@@ -13,22 +13,22 @@ class IndustryTableSeeder extends Seeder
     {
         $data =[
             [
-                'name' => 'IT'
+                'name' => 'Information Technology'
             ],
             [
-                'name' => 'Ceramic Industry'
+                'name' => 'Ceramic'
             ],
             [
-                'name' => 'Real Estate Industry'
+                'name' => 'Real Estate'
             ],
             [
-                'name' => 'Fashion and textile business'
+                'name' => 'Fashion and Textile'
             ],
             [
-                'name' => 'Banking and financial sector'
+                'name' => 'Financial'
             ],
             [
-                'name' => 'Food production industry'
+                'name' => 'Food Production'
             ]
         ];
 

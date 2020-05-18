@@ -16,7 +16,7 @@ class LanguageTableSeeder extends Seeder
                 'name' => 'Vietnamese'
             ],
             [
-                'name' => 'Japan'
+                'name' => 'Japanese'
             ],
             [
                 'name' => 'English'
