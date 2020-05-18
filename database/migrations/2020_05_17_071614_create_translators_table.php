@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTranslatersTable extends Migration
+class CreateTranslatorsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateTranslatersTable extends Migration
      */
     public function up()
     {
-        Schema::create('translaters', function (Blueprint $table) {
+        Schema::create('translators', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
             $table->unsignedBigInteger('user_id')->nullable();
@@ -35,6 +35,6 @@ class CreateTranslatersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('translaters');
+        Schema::dropIfExists('translators');
     }
 }

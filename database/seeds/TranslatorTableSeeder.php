@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class TranslaterTableSeeder extends Seeder
+class TranslatorTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -54,6 +54,6 @@ class TranslaterTableSeeder extends Seeder
             ]
         ];
 
-        DB::table('translaters')->insert($data);
+        DB::table('translators')->insert($data);
     }
 }
