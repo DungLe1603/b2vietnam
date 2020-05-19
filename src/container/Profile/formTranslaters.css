@@ -1,0 +1,29 @@
+.imageEdit{
+    text-align: center;
+    margin-top: 60px;
+    padding-top: 5%;
+  }
+  .textEdit{
+      font-family: 'Playfair Display', serif;
+      font-size: 40px;
+  
+  }
+  
+  .left-form{
+     
+      margin: 40px;
+      padding-top: 20px;
+      padding-bottom: 20px;
+      background-color:#eceff1
+      
+  }
+  .ButtonEdit{
+      text-align: left; 
+      padding-left: 70%;
+     
+  }
+  
+  .ButtonEdit{
+     size: 20px;
+     
+  }

@@ -1,0 +1,30 @@
+.IndustryContainer {
+  display: flex;
+  justify-content: center;
+  vertical-align: middle;
+  text-align: center;
+ 
+
+  .companyCard {
+    display: block;
+    // border: 1px solid black;
+    text-align: center;
+    padding: 30px 50px;
+    width: 100%;
+
+    h1 {
+      background-color: rgb(13, 13, 107);
+      color: white;
+      padding: 20px;
+    }
+    
+
+    .CompanyList {
+      align-items: center;
+      // border: 1px solid black;
+      text-align: center;
+      padding: 50px 0;
+
+    }
+  }
+}

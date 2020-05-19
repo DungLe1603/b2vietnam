@@ -1,0 +1,56 @@
+.Container {
+  height: auto;
+  
+  .Header {
+    text-align: center;
+
+    h1 {
+      font-size: 30px;
+    }
+  }
+
+  .IndustryList {
+    width: 100%;
+
+    .list-category {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+
+      .list-category__link {
+        display: block;
+        text-decoration: none;
+        padding: 5px 50px;
+        
+
+        .list-category__img {
+          img {
+            height: 250px;
+            width: 250px;
+            border-radius: 5px;
+            background-color: black;
+            transition: all 0.6s ease 0s;
+          }
+
+          img:hover {
+            cursor: pointer;
+            transform: scale(1.1, 1.1);
+          }
+        }
+
+
+
+        .list-category__info {
+          h3 {
+            font-size: larger;
+            text-align: center;
+            color: black;
+            padding-top: 20px;
+          }
+        }
+      }
+    }
+  }
+}
