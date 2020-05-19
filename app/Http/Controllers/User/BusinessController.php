@@ -9,9 +9,9 @@ use Illuminate\Http\Response;
 
 class BusinessController extends Controller
 {
-    public function getSellBusiness(Request $request)
+    public function getSellerBusiness(Request $request)
     {
-        $businesses = BusinessServices::sellBusinesses()->get();
+        $businesses = BusinessServices::sellerBusinesses()->get();
 
         return $this->sendResult(
             'Get Businesses Successful',
@@ -20,9 +20,9 @@ class BusinessController extends Controller
         );
     }
 
-    public function getBuyBusiness(Request $request)
+    public function getBuyerBusiness(Request $request)
     {
-        $businesses = BusinessServices::buyBusiness()->get();
+        $businesses = BusinessServices::buyerBusiness()->get();
 
         return $this->sendResult(
             'Get Businesses Successful',
@@ -55,7 +55,8 @@ class BusinessController extends Controller
 
     public function searchBusiness(Request $request)
     {
-        $businesses = BusinessServices::searchBusiness($request)->get();
+        $search = '%' . $request->data . '%';
+        $businesses = BusinessServices::searchBusiness($search)->get();
 
         return $this->sendResult(
             'Search Successfull',

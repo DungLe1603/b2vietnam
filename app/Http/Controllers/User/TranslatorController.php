@@ -13,11 +13,11 @@ class TranslatorController extends Controller
 {
     public function index()
     {
-        $translators = TranslatorServices::listAllTranslators();
+        $translaterService = TranslatorServices::listAllTranslators();
 
         return $this->sendResult(
             'List All Translators',
-            compact('translators'),
+            compact('translaterService'),
             Response::HTTP_OK
         );
     }

@@ -3,16 +3,17 @@
 namespace App\Http\Services;
 
 use App\Model\Business;
+use App\Model\User;
 use Illuminate\Http\Request;
 
 class BusinessServices
 {
-    public static function sellBusinesses()
+    public static function sellerBusinesses()
     {
         return Business::where('business_type', 1);
     }
 
-    public static function buyBusiness() {
+    public static function buyerBusiness() {
         return Business::where('business_type', 0);
     }
 
@@ -26,10 +27,8 @@ class BusinessServices
         return Business::where('industry_id', $id);
     }
 
-    public static function searchBusiness(Request $request)
+    public static function searchBusiness($search)
     {
-        $search = '%' . $request->data . '%';
-
         return Business::where('description', 'like', $search)->orWhere('product', 'like', $search);
     }
 }
