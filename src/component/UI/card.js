@@ -12,7 +12,7 @@ function card(props) {
   return (
     <div className="Card">
       <Card border="primary">
-        <Link to="">
+        <Link to="business/detail">
           <Card.Header>Company : {name}</Card.Header>
         </Link>
         <Card.Body>
