@@ -15,8 +15,10 @@ use Illuminate\Http\Request;
 
 Route::namespace('User')->group(function () {
     Route::post('business/login', 'LoginController@loginBusiness')->name('loginBusiness');
+    Route::post('business/register', 'BusinessController@register')->name('register');
     Route::group(['prefix' => 'business', 'middleware' => ['api', 'auth:api']], function () {
         Route::get('logout', 'LoginController@logout')->name('logout');
+        Route::get('show/{id}', 'BusinessController@show')->name('show');
         Route::get('country/{id}', 'BusinessController@getBusinessByCountry')->name('getBusinessByCountry');
         Route::get('sellBusiness', 'BusinessController@getSellerBusiness')->name('getSellBusiness');
         Route::get('buyBusiness', 'BusinessController@getBuyerBusiness')->name('getBuyerBusiness');
@@ -25,6 +27,7 @@ Route::namespace('User')->group(function () {
     });
     Route::group(['prefix' => 'translator', 'middleware' => ['api', 'auth:api']], function () {
         Route::get('index', 'TranslatorController@index')->name('index');
+        Route::get('show/{id}', 'TranslatorController@show')->name('show');
         Route::post('search', 'TranslatorController@searchByLanguage')->name('searchByLanguage');
     });
 });

@@ -4,8 +4,6 @@ namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
 use App\Http\Services\TranslatorServices;
-use App\Model\Language;
-use App\Model\Translater;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
@@ -18,6 +16,17 @@ class TranslatorController extends Controller
         return $this->sendResult(
             'List All Translators',
             compact('translaterService'),
+            Response::HTTP_OK
+        );
+    }
+
+    public function show($id) {
+
+        $translator = TranslatorServices::show($id)->get();
+
+        return $this->sendResult(
+            'Info Translator',
+            compact('translator'),
             Response::HTTP_OK
         );
     }
