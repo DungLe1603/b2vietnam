@@ -6,10 +6,12 @@ import {
   InputGroup,
   FormControl,
   CardDeck,
+  Row
 } from "react-bootstrap";
 import "./showList.css";
 import { Link } from "react-router-dom";
 import Information from "./info-json";
+import Header from "../../component/Header/Header";
 
 class showLists extends Component {
   constructor() {
@@ -59,7 +61,6 @@ class showLists extends Component {
           />
           <Card.Body>
             <Card.Title>{data.name}</Card.Title>
-<<<<<<< Updated upstream
 
             <Card.Footer>
               <small className="text-muted">
@@ -75,35 +76,22 @@ class showLists extends Component {
       );
     });
 
-=======
-
-            <Card.Footer>
-              <small className="text-muted">
-                <p> {data.description} </p>
-                <p> {data.certification} </p>
-              </small>
-              <button>
-                <Link to="/info"> learn More</Link>
-              </button>
-            </Card.Footer>
-          </Card.Body>
-        </Card>
-      );
-    });
-
->>>>>>> Stashed changes
     const rows = this.arrayTo2DArray2(items, 4).map((row) => {
       return <CardDeck>{row}</CardDeck>;
     });
 
     return (
       <React.Fragment>
+        <Row>
+          <Header/>
+        </Row>
         <h1 mt-3>Search User</h1>
         <div className="container-fluid o-header">
+
           <Col>
             <InputGroup className="mb-3">
               <FormControl
-                placeholder="Username"
+                placeholder="Pu keywords"
                 aria-label="Username"
                 aria-describedby="basic-addon1"
                 onChange={(e) => this.searchSpace(e)}
