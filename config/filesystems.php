@@ -51,7 +51,7 @@ return [
         'public' => [
             'driver' => 'local',
             'root' => storage_path('app/public'),
-            'url' => env('APP_URL').'/storage',
+            'url' => env('APP_URL') . '/storage',
             'visibility' => 'public',
         ],
 
@@ -65,6 +65,14 @@ return [
             'endpoint' => env('AWS_ENDPOINT'),
         ],
 
+        'gcs' => [
+            'driver' => 'gcs',
+            'project_id' => env('GOOGLE_CLOUD_PROJECT_ID', 'trusty-banner-273005'),
+            'key_file' => env('GOOGLE_CLOUD_KEY_FILE', '../key.json'), // optional: /path/to/service-account.json
+            'bucket' => env('GOOGLE_CLOUD_STORAGE_BUCKET', 'stunited-intern'),
+            'path_prefix' => env('GOOGLE_CLOUD_STORAGE_PATH_PREFIX', null), // optional: /default/path/to/apply/in/bucket
+            'storage_api_uri' => env('GOOGLE_CLOUD_STORAGE_API_URI', 'https://storage.googleapis.com/stunited-intern'), // see: Public URLs below
+        ],
     ],
 
 ];
