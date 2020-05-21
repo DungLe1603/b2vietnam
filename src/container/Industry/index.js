@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Business from "../../component/Industry/Business";
+import Sidebar from "../../component/Industry/Sidebar";
 import Header from '../../component/Header/Header';
 import Modal from '../../component/UI/Modal';
-import LoginPage from '../../component/Login/LoginPage';import { Row, Col, Container } from "react-bootstrap";
+import LoginPage from '../../component/Login/LoginPage';
+import { Row, Col, Container, Navbar, Nav, Form, FormControl, Button } from "react-bootstrap";
 
 
 function Industry() {
@@ -23,29 +25,37 @@ function Industry() {
         <LoginPage />
       </Modal>
       <Header modalOpened={showHandler} />
-      
-      <Container>
+
+      <Navbar bg="light" variant="light" className="mt-4 px-5">
+        <Nav className="mr-auto">
+          <p>what are you interested in?</p>
+        </Nav>
+        <Form inline>
+          <FormControl type="text" placeholder="Search" className="mr-sm-2" />
+          <Button variant="outline-primary">Search</Button>
+        </Form>
+      </Navbar>
+              
+      <div className="m-5">
         <Row>
-          <Col md="3">            
-            This is side bar
+          <Col md="3">
+            <Sidebar />
           </Col>
           <Col md="9">
             <div className="business-session">
-              <h3>List businesses</h3>
+              <h3 className="mb-3">List Businesses</h3>
               <div className="business-menu">
-                <Row>
-									<Business/>
-									<Business/>
-									<Business/>
-									<Business/>
-									<Business/>
-									<Business/>
-								</Row>
+                <Business/>
+                <Business/>
+                <Business/>
+                <Business/>
+                <Business/>
+                <Business/>
               </div>
             </div>
           </Col>
         </Row>
-      </Container>
+      </div>
     </React.Fragment>
   );
 }
