@@ -11,6 +11,7 @@ import showForm from '../../container/Profile/formTranslaters'
 import showLists from '../../container/showList/showList'
 import personalInfo from '../../container/TranslaterInfo/translaterInfor'
 import Business from '../Business';
+import Industry from '../Industry';
 function App() {
   return (
     <BrowserRouter>
@@ -24,6 +25,7 @@ function App() {
       <Route path="/list" component={showLists} />
       <Route path="/info" component={personalInfo} />
       <Route path="/business/detail" component={Business} />
+      <Route path="/industry" component={Industry} />
       </Switch>
     </BrowserRouter>
   );
