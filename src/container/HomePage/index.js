@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Dropdown } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { Row, Form, Col, Container, Button, Image } from "react-bootstrap";
+import { Row, Form, Col, Container, Button, Image,Navbar,Nav,FormControl } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../../assets/stylesheet/HomePage.scss";
 import IndustryComponent from "../../component/Industry/Industry";
@@ -23,11 +23,22 @@ function Homepage(props) {
   console.log(props);
   return (
     <React.Fragment>
-      <Modal show={show} modalClosed={showCancelHandler}>
+       <Navbar style={{backgroundColor:"#006064"}} variant="dark">
+    <Navbar.Brand  style={{fontSize:"30px"}} href="#home">B2Vietnam</Navbar.Brand>
+    <Nav className="mr-auto">
+     
+    </Nav>
+    <Form inline>
+      <FormControl  style={{ paddingRight:"100px"}}type="text" placeholder="Search" className="mr-sm-2" />
+      <Button variant="outline-info">Search</Button>
+    </Form>
+  </Navbar>
+      {/* <Modal show={show} modalClosed={showCancelHandler}>
         <LoginPage />
       </Modal>
-      <Header modalOpened={showHandler} />
+      <Header modalOpened={showHandler} />  */}
       <IndustryComponent />
+     
 
       <Container>
         <Row>
@@ -57,7 +68,7 @@ function Homepage(props) {
                 </Form.Control>
               </Form.Group>
             </Form>
-            <Link  to ="/form" variant="primary" size="lg" block>
+            <Link  to ="/list" variant="primary" size="lg" block>
               Let's connect
             </Link>
           </Col>

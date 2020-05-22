@@ -1,15 +1,11 @@
 .IndustryContainer {
   display: flex;
-  justify-content: center;
-  vertical-align: middle;
   text-align: center;
- 
+  width: 100%;
+  height: auto;
 
   .companyCard {
-    display: block;
-    // border: 1px solid black;
     text-align: center;
-    padding: 30px 50px;
     width: 100%;
 
     h1 {
@@ -20,11 +16,27 @@
     
 
     .CompanyList {
+      // height: 300px;
+      display: flex;
+      flex-wrap: inherit;
+      // width: 100%;
+      // justify-content: space-evenly;
       align-items: center;
-      // border: 1px solid black;
+      border: 1px solid black;
       text-align: center;
-      padding: 50px 0;
+      padding: 50px 50px;
+      // margin: 30px;
 
+      .CardDeck {
+        
+        // display: flex;
+        border: 1px solid black;
+        // width: 100%;
+        padding: 20px;
+        border: 1px solid black;
+        // width: 50%;
+      }
+      
     }
   }
 }

@@ -1,8 +1,8 @@
 import React from "react";
-import { ButtonGroup, DropdownButton, Button } from "react-bootstrap";
+      
+import { CardColumns ,Navbar, Nav,Form, Button,FormControl} from "react-bootstrap";
 
 import Header from "../../component/Header/Header";
-import Sidebar from "../../component/UI/ButtonGroup";
 import Card from "../../component/UI/card";
 import StunitedImage from "../../assets/image/stUnited.image.png";
 import AppleImage from "../../assets/image/apple.image.jpg";
@@ -12,14 +12,55 @@ import "bootstrap/dist/css/bootstrap.min.css";
 const CompanyInfo = {
   company1: {
     name: "ST United",
-    representative: "Bui Ngoc Vinh",
-    introduction: "ST SOFTWARE WE OFFER A WEALTH OF SERVICES TO ADDRESS YOUR TECHNOLOGY NEEDS",
+   
+    introduction:
+    "produce software: android, IOS, Web Pages",
+    representative: "14 An Thuong 18, Danang",
     image: { StunitedImage },
   },
   company2: {
-    name: "APLC",
-    representative: "Sllay Tran",
-    introduction: "bring new tech to your world",
+    name: "FPT Software (FSoft)",
+   
+    introduction: "produce software: android, IOS, Web, AI, Desktop",
+    representative: "268B Nam Ky Khoi Nghia, Ward 8, District 3, Ho Chi Minh City",
+    image: { AppleImage },
+  },
+  company3: {
+    name:  "HCA Software",
+    introduction: "Develop Web Pages",
+    representative: "33 Nam Ky Khoi Nghia, Ward 8, District 3, Ho Chi Minh City",
+    
+    image: { AppleImage },
+  },
+  company4: {
+    name: "Global CyberSoft Company",
+    introduction: "Develop Android",
+    representative: "2 , Le Ba Ward 8, District 3, Ha Noi City",
+   
+    image: { AppleImage },
+  },
+  company5: {
+    name:"GlobalCompany",
+    representative:"268B Nam Ky Khoi Nghia, Ward 8, District 3, Ha Noi City",
+    introduction:  "produce software: android, IOS, Web",
+    image: { AppleImage },
+  },
+  company6: {
+    name: "ACV CyberSoft Company",
+    representative: "268B Nam Ky Khoi Nghia, Ward 8, District 3, Ho Chi Minh City",
+    introduction: "Software: Desktop",
+    image: { AppleImage },
+  },
+  company7: {
+    name:"ACV CyberSoft Company",
+    representative: "268B Nam Ky Khoi Nghia, Ward 8, District 3, Ho Chi Minh City",
+    introduction:  "Software : IOS",
+    image: { AppleImage },
+  },
+  company8: {
+    name: "BPO CyberSoft Company",
+    representative:  "268 Nam Ky, Ward 8, District 3, Ho Chi Minh City",
+    introduction: "Software : AI, Software: Web",
     image: { AppleImage },
   },
 };
@@ -33,7 +74,6 @@ function Industry() {
           name={CI.name}
           representative={CI.representative}
           introduction={CI.introduction}
-          //image={CI.image}
         />
       );
     });
@@ -41,14 +81,22 @@ function Industry() {
 
   return (
     <React.Fragment>
-      <Header />
+      {/* <Header /> */}
+      <Navbar style={{paddingTop:"0px"}} bg="light" variant="light" className="mt-4 px-5">
+        <Nav className="mr-auto">
+          <p>what are you interested in?</p>
+        </Nav>
+        <Form inline>
+          <FormControl type="text" placeholder="Search" className="mr-sm-2" />
+          <Button variant="outline-primary">Search</Button>
+        </Form>
+      </Navbar>
       <div className="IndustryContainer">
-        <div className="Sidebar">
-          <Sidebar />
-        </div>
         <div className="companyCard">
           <h1>Information about Information Technology</h1>
-          <div className="CompanyList">{companyCard}</div>
+          <div className="CompanyList">
+            <CardColumns>{companyCard}</CardColumns>
+          </div>
         </div>
       </div>
     </React.Fragment>

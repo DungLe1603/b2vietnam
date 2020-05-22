@@ -1,30 +1,27 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { CardDeck, Card } from "react-bootstrap";
+import { CardDeck, Card, Button } from "react-bootstrap";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../../assets/stylesheet/Card.scss";
 
 function card(props) {
-  console.log(props);
-
   const { name, representative, introduction, image } = props;
   return (
-    <div className="Card">
-      <Card border="primary">
-        <Link to="">
-          <Card.Header>Company : {name}</Card.Header>
-        </Link>
-        <Card.Body>
-          <Card.Img src={image} />
-          <Card.Title>Representative : {representative}</Card.Title>
-          <Card.Text> Introduction : {introduction}</Card.Text>
-          <button>Let's chat</button>
-        </Card.Body>
-      </Card>
-
-      <br />
-    </div>
+    <Card border="primary" className="Card">
+      <Link to="/IntroductionComapny">
+        <Card.Header style={{fontSize:"20px",color:"#004d40"}}>Company : {name}</Card.Header>
+      </Link>
+      <Card.Body>
+        <Card.Img src={image} />
+        
+        <Card.Title> Products : {introduction}</Card.Title>
+        <Card.Text>Address : {representative}</Card.Text>
+        <button >
+          <Link to=""> Let's chat</Link>
+        </button>
+      </Card.Body>
+    </Card>
   );
 }
 

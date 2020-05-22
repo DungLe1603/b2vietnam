@@ -6,12 +6,16 @@ import {
   InputGroup,
   FormControl,
   CardDeck,
-  Row
+  Row,
+  Container,
+  Nav,
+  Navbar,Form,Button
 } from "react-bootstrap";
 import "./showList.css";
+// import "../../assets/stylesheet/HomePage.scss";
 import { Link } from "react-router-dom";
 import Information from "./info-json";
-import Header from "../../component/Header/Header";
+ import Header from "../../component/Header/Header";
 
 class showLists extends Component {
   constructor() {
@@ -56,16 +60,17 @@ class showLists extends Component {
           <Image
             className="text-center p-3"
             variant="top"
-            src="https://picsum.photos/151/150"
-            roundedCircle
+            width="250"
+            height="200"
+            src={data.avatar}
           />
           <Card.Body>
             <Card.Title>{data.name}</Card.Title>
 
             <Card.Footer>
               <small className="text-muted">
-                <p> {data.description} </p>
-                <p> {data.certification} </p>
+                <p> Language: {data.description} </p>
+                <p>  Certifications:{data.certification} </p>
               </small>
               <button>
                 <Link to="/info"> learn More</Link>
@@ -82,27 +87,33 @@ class showLists extends Component {
 
     return (
       <React.Fragment>
-        <Row>
-          <Header/>
-        </Row>
-        <h1 mt-3>Search User</h1>
-        <div className="container-fluid o-header">
-
-          <Col>
-            <InputGroup className="mb-3">
-              <FormControl
-                placeholder="Pu keywords"
-                aria-label="Username"
-                aria-describedby="basic-addon1"
-                onChange={(e) => this.searchSpace(e)}
-              />
-            </InputGroup>
-          </Col>
-        </div>
-        <div className="container">{rows}</div>
+          <Navbar style={{backgroundColor:"#006064"}} variant="dark">
+    <Navbar.Brand  style={{fontSize:"30px"}} href="#home">B2Vietnam</Navbar.Brand>
+    <Nav className="mr-auto">
+     
+    </Nav>
+    
+  </Navbar>
+        <Container className="container-fluid">
+      
+          {/* <Header /> */}
+          <h1 mt-3>Search your Translator</h1>
+          <div className="container-fluid o-header">
+            <Col>
+              <InputGroup className="mb-3">
+                <FormControl
+                  placeholder="Put keywords"
+                  aria-label="Username"
+                  aria-describedby="basic-addon1"
+                  onChange={(e) => this.searchSpace(e)}
+                />
+              </InputGroup>
+            </Col>
+          </div>
+          <div className="container">{rows}</div>
+        </Container>
       </React.Fragment>
     );
   }
 }
 export default showLists;
-
